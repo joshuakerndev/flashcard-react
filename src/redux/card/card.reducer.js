@@ -1,6 +1,6 @@
-import FLASHCARD_DATA from '../../FlashcardContainer/FLASHCARD_DATA';
-import FLASHCARD_DATA_2 from '../../FlashcardContainer/FLASHCARD_DATA_2';
-import FLASHCARD_DATA_3 from '../../FlashcardContainer/FLASHCARD_DATA_3';
+import FLASHCARD_DATA from '../../DeckPreview/FLASHCARD_DATA';
+import FLASHCARD_DATA_2 from '../../DeckPreview/FLASHCARD_DATA_2';
+import FLASHCARD_DATA_3 from '../../DeckPreview/FLASHCARD_DATA_3';
 
 
 
