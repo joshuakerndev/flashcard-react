@@ -1,11 +1,10 @@
 import FLASHCARD_DATA from '../../DeckPreview/FLASHCARD_DATA';
-import FLASHCARD_DATA_2 from '../../DeckPreview/FLASHCARD_DATA_2';
-import FLASHCARD_DATA_3 from '../../DeckPreview/FLASHCARD_DATA_3';
 
 
 
 const INITIAL_STATE = {
-    currentDeck: FLASHCARD_DATA
+    currentDeck: FLASHCARD_DATA,
+    currentCard: 0
 }
 
 const cardReducer = (state = INITIAL_STATE, action) => {
@@ -14,6 +13,16 @@ const cardReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 currentDeck: action.payload
+            };
+        case 'INCREMENT_CARD':
+            return {
+                ...state,
+                currentCard: action.payload
+            };
+        case 'DECREMENT_CARD':
+            return {
+                ...state,
+                currentCard: action.payload
             };
         default:
             return state;

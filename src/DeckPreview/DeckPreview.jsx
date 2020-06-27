@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setDeck } from '../redux/card/card.actions';
-import cycleFlashcard from '../helpers/flashcard-cycle-helper';
+import cycleDeck from '../helpers/cycle-deck-helper';
 
 import {
     BrowserRouter as Router,
@@ -17,7 +17,7 @@ import Flashcard from '../Flashcard/Flashcard';
 
 const DeckPreview = ({ currentDeck, setDeck }) => {
 
-    const nextDeck = cycleFlashcard(currentDeck);
+    const nextDeck = cycleDeck(currentDeck);
 
     return (
         <div className='DeckPreview'>
