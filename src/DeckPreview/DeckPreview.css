@@ -1,7 +1,8 @@
 .DeckPreview {
     background-image: url('./FlashcardSVGbackground.svg');
-    height: 100%;
-    width: 100vw;
+}
+
+.CardSpread {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px
@@ -9,4 +10,25 @@
 
 .DeckPreviewHomeLink {
     background-color: gray;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.DeckPreviewStudyPageLink {
+    background-color: gray;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.DeckPreviewChangeDeckButton {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.DeckPreviewCollapse {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
