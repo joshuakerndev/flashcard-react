@@ -39,9 +39,12 @@ export const addDeck = (newDeck) => async dispatch => {
 export const addCard = (newCard, deckId) => async dispatch => {
     try {
         const savedDecks = JSON.parse(localStorage.getItem("decks"));
+        let updatedDeck;
         for(let i=0; i<savedDecks.length; i++){
             if(savedDecks[i].id === deckId){
-                savedDecks[i].cards.push(newCard)
+                savedDecks[i].cards.push(newCard);
+                updatedDeck = savedDecks[i];
+                console.log(updatedDeck);
             }
         }
         localStorage.setItem("decks", JSON.stringify(savedDecks));
@@ -50,6 +53,11 @@ export const addCard = (newCard, deckId) => async dispatch => {
             type: 'SET_DECKS',
             payload: result
         });
+        dispatch({
+            type: 'SET_DECK',
+            payload: updatedDeck
+        });
+
     } catch(err){
         console.log(err);
     }

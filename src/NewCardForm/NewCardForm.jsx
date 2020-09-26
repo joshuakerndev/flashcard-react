@@ -28,14 +28,20 @@ const NewCardForm = ({ currentDeck, addCard }) => {
 
     //Logic for adding new card to current deck
     const storeCard = () => {
-
-        let newCard = 
+        if(
+            (englishText.length === 0 || !englishText.trim()) ||
+            (chineseText.length === 0 || !chineseText.trim())
+        ){
+            alert('Please fill out each field!');
+        } else {
+            let newCard = 
             {
                 English: englishText, 
                 Chinese: chineseText, 
                 id: uuidv4()
             };
-        addCard(newCard, currentDeck.id);
+            addCard(newCard, currentDeck.id);
+        }
     }
     
 

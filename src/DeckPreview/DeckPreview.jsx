@@ -45,7 +45,8 @@ const DeckPreview = ({ decks, currentDeck }) => {
             </Collapse>
                 <Container>
                     <Row>
-                        {currentDeck.cards.map((card) => (
+                        {currentDeck && 
+                        currentDeck.cards.map((card) => (
                             <Col xs="12" sm="6" md="4" key={card.id}>
                                 <Flashcard card={card} key={card.id} />
                             </Col>

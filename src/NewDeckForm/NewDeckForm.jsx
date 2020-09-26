@@ -29,8 +29,15 @@ const NewDeckForm = ({ addDeck }) => {
 
     //Create new deck
     const storeDeck = () => {
-
-        let newDeck = 
+        if(
+            (name.length === 0 || !name.trim()) ||
+            (description.length === 0 || !description.trim()) ||
+            (englishText.length === 0 || !englishText.trim()) ||
+            (chineseText.length === 0 || !chineseText.trim())
+        ){
+            alert('Please fill out each field!');
+        } else{
+            let newDeck = 
             {
                 name: name,
                 id: uuidv4(),
@@ -43,7 +50,8 @@ const NewDeckForm = ({ addDeck }) => {
                     }
                 ]
             };
-        addDeck(newDeck);
+            addDeck(newDeck);
+        }
     }
     
 
@@ -58,7 +66,7 @@ const NewDeckForm = ({ addDeck }) => {
                     name="name" 
                     id="newDeckName"
                     placeholder="New Deck Name"
-                    required
+                    required={true}
                 />
                 <Label for="name">Description</Label>
                 <Input 
@@ -68,6 +76,7 @@ const NewDeckForm = ({ addDeck }) => {
                     name="description" 
                     id="newDeckDescription"
                     placeholder="Description"
+                    required={true}
                 />
                 <Label for="firstCard">First Card</Label>
                 <Input 
@@ -77,6 +86,7 @@ const NewDeckForm = ({ addDeck }) => {
                     name="englishText" 
                     id="firstCardEnglishText"
                     placeholder="English"
+                    required={true}
                 />
                 <Input 
                     type="text"
@@ -85,6 +95,7 @@ const NewDeckForm = ({ addDeck }) => {
                     name="chineseText" 
                     id="firstcardChineseText"
                     placeholder="Chinese"
+                    required={true}
                 />
             </FormGroup>
             <Button
