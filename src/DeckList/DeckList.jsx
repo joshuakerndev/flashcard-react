@@ -20,7 +20,7 @@ import Flashcard from '../Flashcard/Flashcard';
 import NewDeckForm from '../NewDeckForm/NewDeckForm';
 
 
-const DeckList = ({ decks, setDeck, saveDeck }) => {
+const DeckList = ({ decks, setDeck }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const DeckList = ({ decks, setDeck, saveDeck }) => {
                     New Deck
                 </Button>
                 <Collapse isOpen={isOpen} className="DeckListCollapse">
-                    <NewDeckForm saveDeck={saveDeck} />
+                    <NewDeckForm />
                 </Collapse>
                 <Container>
                     <Row>
@@ -70,7 +70,6 @@ const DeckList = ({ decks, setDeck, saveDeck }) => {
 }
 
 const mapStateToProps = (state) => ({
-    currentDeck: state.card.currentDeck,
     decks: state.card.decks
 });
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import DeckPreview from './DeckPreview/DeckPreview';
 import HomePage from './HomePage/HomePage';
@@ -6,7 +6,7 @@ import StudyPage from './StudyPage/StudyPage';
 import DeckList from './DeckList/DeckList';
 
 import { connect } from 'react-redux';
-import { setDecks } from './redux/card/card.actions';
+import { setDecks, addCard } from './redux/card/card.actions';
 
 import FLASHCARD_DATA from './DeckPreview/FLASHCARD_DATA';
 import FLASHCARD_DATA_2 from './DeckPreview/FLASHCARD_DATA_2';
@@ -15,7 +15,7 @@ import FLASHCARD_DATA_3 from './DeckPreview/FLASHCARD_DATA_3';
 
 import { Switch, Route } from 'react-router-dom';
 
-function App({ setDecks }) {
+function App({ setDecks, addCard }) {
 
   const initialDecks = [FLASHCARD_DATA, FLASHCARD_DATA_2, FLASHCARD_DATA_3];
   
@@ -34,7 +34,7 @@ function App({ setDecks }) {
       }
     }
     getSavedDecks();
-  }, [initialDecks, setDecks]);
+  }, [initialDecks, setDecks, addCard]);
 
 
   return (
@@ -57,7 +57,9 @@ function App({ setDecks }) {
           path='/deckpreview'
           exact
           render={() => 
-            <DeckPreview />
+            <DeckPreview 
+              initialDecks={initialDecks}
+            />
           }
         />
         <Route
@@ -72,5 +74,5 @@ function App({ setDecks }) {
 
 export default connect(
   null, 
-  { setDecks }
+  { setDecks, addCard }
 )(App);

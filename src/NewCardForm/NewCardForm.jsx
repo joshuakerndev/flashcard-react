@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import "./NewCardForm.css";
 import { v4 as uuidv4 } from 'uuid';
 
+import { addCard } from '../redux/card/card.actions';
+
+import { connect } from 'react-redux';
+
 import { 
     Button,
     Form, 
@@ -10,7 +14,7 @@ import {
     Input
 } from 'reactstrap';
 
-export default function NewCardForm(currentDeck) {
+const NewCardForm = ({ currentDeck, addCard }) => {
 
     //Hook useState for the form input state
     const [formData, setFormData] = useState({
@@ -27,11 +31,11 @@ export default function NewCardForm(currentDeck) {
 
         let newCard = 
             {
-                english: englishText, 
-                chinese: chineseText, 
+                English: englishText, 
+                Chinese: chineseText, 
                 id: uuidv4()
             };
-        console.log(newCard);
+        addCard(newCard, currentDeck.id);
     }
     
 
@@ -65,3 +69,5 @@ export default function NewCardForm(currentDeck) {
         </Form>
     )
 }
+
+export default connect(null, { addCard })(NewCardForm);

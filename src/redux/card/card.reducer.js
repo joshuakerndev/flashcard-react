@@ -40,7 +40,7 @@ const cardReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 decks: [action.payload, ...state.decks]
-            }
+            };
         default:
             return state;
     }

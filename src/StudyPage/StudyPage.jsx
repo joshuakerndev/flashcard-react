@@ -26,6 +26,12 @@ const StudyPage = ({
     const nextCard = incrementCardHelper(currentDeck, currentCard);
     const prevCard = decrementCardHelper(currentDeck, currentCard);
 
+    const handleShuffleClick = () => {
+        shuffleDeckHelper(currentDeck.cards);
+        console.log(currentDeck.cards);
+        incrementCard(nextCard);
+    }
+
     return(
         <div className='StudyPage'>
             <FlashNavbar />
@@ -49,7 +55,7 @@ const StudyPage = ({
             </div>
             <Button
                 className='ShuffleDeckButton'
-                onClick={() => (shuffleDeckHelper(currentDeck), incrementCard(nextCard))}
+                onClick={() => handleShuffleClick()}
             >
                 Shuffle
             </Button>

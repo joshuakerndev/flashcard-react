@@ -17,7 +17,7 @@ import './DeckPreview.css';
 import Flashcard from '../Flashcard/Flashcard';
 
 
-const DeckPreview = ({ currentDeck }) => {
+const DeckPreview = ({ decks, currentDeck }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -46,7 +46,7 @@ const DeckPreview = ({ currentDeck }) => {
                 <Container>
                     <Row>
                         {currentDeck.cards.map((card) => (
-                            <Col xs="12" sm="6" md="4">
+                            <Col xs="12" sm="6" md="4" key={card.id}>
                                 <Flashcard card={card} key={card.id} />
                             </Col>
                         ))}
@@ -57,11 +57,8 @@ const DeckPreview = ({ currentDeck }) => {
 }
 
 const mapStateToProps = (state) => ({
-    currentDeck: state.card.currentDeck
+    currentDeck: state.card.currentDeck,
+    decks: state.card.decks
 });
 
-const mapDispatchToProps = dispatch => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DeckPreview);
+export default connect(mapStateToProps)(DeckPreview);
