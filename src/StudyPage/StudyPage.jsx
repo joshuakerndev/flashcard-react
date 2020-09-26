@@ -28,7 +28,6 @@ const StudyPage = ({
 
     const handleShuffleClick = () => {
         shuffleDeckHelper(currentDeck.cards);
-        console.log(currentDeck.cards);
         incrementCard(nextCard);
     }
 
