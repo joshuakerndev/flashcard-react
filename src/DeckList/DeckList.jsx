@@ -4,27 +4,36 @@ import FlashNavbar from '../FlashNavbar/FlashNavbar';
 
 import { Link } from 'react-router-dom';
 
-import { setDeck, setDecks } from '../redux/card/card.actions';
+import { 
+    setDeck,
+    setDecks,
+    deleteDeck
+} from '../redux/card/card.actions';
 
-import { Button } from 'reactstrap';
-import 
-    { 
-        Container, 
-        Row, 
-        Col, 
-        Collapse 
-    } from "reactstrap";
+import { 
+    Button,
+    Container, 
+    Row, 
+    Col, 
+    Collapse 
+} from "reactstrap";
 
 import './DeckList.css';
 import Flashcard from '../Flashcard/Flashcard';
 import NewDeckForm from '../NewDeckForm/NewDeckForm';
 
 
-const DeckList = ({ decks, setDeck }) => {
+const DeckList = ({ decks, setDeck, deleteDeck }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    const handleDeleteClick = (id) => {
+        if(window.confirm('Are you sure? Deleting a deck cannot be undone!')){
+            deleteDeck(id);
+        }
+    }
 
     return (
         <div className='DeckList'>
@@ -61,6 +70,12 @@ const DeckList = ({ decks, setDeck }) => {
                                         Study!
                                     </Button>
                                 </Link>
+                                <Button
+                                        color="danger"
+                                        onClick={() => handleDeleteClick(deck.id)}
+                                    >
+                                        Delete
+                                </Button>
                             </Col>
                         ))}
                     </Row>
@@ -75,7 +90,16 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
     setDeck: deck => dispatch(setDeck(deck)),
-    setDecks: decks => dispatch(setDecks(decks))
+    setDecks: decks => dispatch(setDecks(decks)),
+    deleteDeck: id => dispatch(deleteDeck(id))
 });
 
-export default connect(mapStateToProps, { mapDispatchToProps, setDecks, setDeck })(DeckList);
+export default connect(
+    mapStateToProps, 
+    { 
+        mapDispatchToProps, 
+        setDecks, 
+        setDeck, 
+        deleteDeck 
+    }
+)(DeckList);
