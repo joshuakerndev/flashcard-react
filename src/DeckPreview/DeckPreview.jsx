@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import NewCardForm from '../NewCardForm/NewCardForm';
 
+import { deleteCard } from '../redux/card/card.actions';
+
 import { 
     Button, 
     Collapse, 
@@ -17,11 +19,15 @@ import './DeckPreview.css';
 import Flashcard from '../Flashcard/Flashcard';
 
 
-const DeckPreview = ({ decks, currentDeck }) => {
+const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    const handleDeleteCardClick = (cardId, deckId) => {
+        deleteCard(cardId, deckId);
+    }
 
     return (
         <div className='DeckPreview'>
@@ -45,12 +51,25 @@ const DeckPreview = ({ decks, currentDeck }) => {
             </Collapse>
                 <Container>
                     <Row>
-                        {currentDeck && 
-                        currentDeck.cards.map((card) => (
+                        {(currentDeck.cards.map((card) => (
                             <Col xs="12" sm="6" md="4" key={card.id}>
                                 <Flashcard card={card} key={card.id} />
+                                <Button 
+                                    className='EditFlashcardButton'
+                                >
+                                    Edit
+                                </Button>
+                                <Button 
+                                    onClick={
+                                        () => handleDeleteCardClick(card.id, currentDeck.id)
+                                    }
+                                    className='DeleteFlashcardButton'
+                                    color="danger"
+                                >
+                                    Delete
+                                </Button>
                             </Col>
-                        ))}
+                        )))}
                     </Row>
                 </Container>
         </div>
@@ -62,4 +81,14 @@ const mapStateToProps = (state) => ({
     decks: state.card.decks
 });
 
-export default connect(mapStateToProps)(DeckPreview);
+const mapDispatchToProps = dispatch => ({
+    deleteCard: cardId => dispatch(deleteCard(cardId))
+});
+
+export default connect(
+    mapStateToProps, 
+    { 
+        mapDispatchToProps, 
+        deleteCard 
+    }
+)(DeckPreview);
