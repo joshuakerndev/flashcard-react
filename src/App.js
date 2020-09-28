@@ -4,6 +4,7 @@ import DeckPreview from './DeckPreview/DeckPreview';
 import HomePage from './HomePage/HomePage';
 import StudyPage from './StudyPage/StudyPage';
 import DeckList from './DeckList/DeckList';
+import QuizPage from './QuizPage/QuizPage';
 
 import { connect } from 'react-redux';
 import { setDecks, addCard } from './redux/card/card.actions';
@@ -66,6 +67,11 @@ function App({ setDecks, addCard }) {
           path='/study'
           exact
           component={StudyPage}
+        />
+        <Route
+          path='/quiz'
+          exact
+          component={QuizPage}
         />
       </Switch>
     </div>

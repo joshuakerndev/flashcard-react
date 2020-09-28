@@ -70,6 +70,13 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
                                         Study!
                                     </Button>
                                 </Link>
+                                <Link to="/quiz">
+                                    <Button
+                                        onClick={() => setDeck(deck)}
+                                    >
+                                        Quiz!
+                                    </Button>
+                                </Link>
                                 <Button
                                         color="danger"
                                         onClick={() => handleDeleteClick(deck.id)}

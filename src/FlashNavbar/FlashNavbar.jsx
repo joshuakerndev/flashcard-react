@@ -25,6 +25,12 @@ const FlashNavbar = (props) => {
             <NavItem>
               <NavLink href="/decklist/">Decks</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/study/">Study</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/quiz/">Quiz</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText>Flashcards by Joshua Kern</NavbarText>
         </Collapse>

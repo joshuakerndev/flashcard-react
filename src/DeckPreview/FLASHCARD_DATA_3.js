@@ -1,7 +1,7 @@
 const FLASHCARD_DATA_3 = { 
-    name: "Deck-3",
+    name: "Deck 3",
     id: 333,
-    description: "Third deck of study flashcards",
+    description: "Third deck of random study flashcards",
     cards:
         [
             {
