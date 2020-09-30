@@ -26,7 +26,9 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
     const toggle = () => setIsOpen(!isOpen);
 
     const handleDeleteCardClick = (cardId, deckId) => {
-        if(window.confirm("Are you sure? Card cannot be recovered")){
+        if(currentDeck.cards.length <= 1){
+            return alert("Cannot delete last card, please edit card or delete deck");
+        } else if(window.confirm("Are you sure? Card cannot be recovered")){
             deleteCard(cardId, deckId);
         } else {
             return;
