@@ -1,6 +1,30 @@
 .DeckList {
-    background-image: url('../DeckPreview/FlashcardSVGbackground.svg');
-    height:100vh;
+    text-align: center;
+    height: 100%;
+}
+
+.DeckListHeader {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.NewDeckButton {
+    margin-bottom: 20px;
+}
+
+.DeckListCollapse {
+    display: flex;
+    justify-content: center;
+}
+
+.DeckPreviewPanel {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .DeckSpread {

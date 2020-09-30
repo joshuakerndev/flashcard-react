@@ -1,0 +1,18 @@
+.QuizPage {
+    text-align: center;
+}
+
+.QuizPageHeader {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.QuizCardContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.SubmitAnswerButton {
+    margin-top: 10px;
+}

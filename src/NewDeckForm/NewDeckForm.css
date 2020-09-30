@@ -1,0 +1,21 @@
+.NewDeckForm {
+    width: 50%;
+    min-height: 350px;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NewDeckFormGroup {
+    width: 100%;
+}
+
+.NewDeckInput {
+    width: 100%;
+}

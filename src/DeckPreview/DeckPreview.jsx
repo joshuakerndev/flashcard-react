@@ -26,33 +26,48 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
     const toggle = () => setIsOpen(!isOpen);
 
     const handleDeleteCardClick = (cardId, deckId) => {
-        deleteCard(cardId, deckId);
+        if(window.confirm("Are you sure? Card cannot be recovered")){
+            deleteCard(cardId, deckId);
+        } else {
+            return;
+        }
     }
 
     return (
         <div className='DeckPreview'>
+
             <FlashNavbar />
-            <h1>Preview / Edit</h1>
-            <Link to='/decklist'>
+
+            <div className="DeckPreviewHeader">
+                <h1>Preview / Edit</h1>
+                <Link to='/decklist'>
                 <Button 
                     className='DeckPreviewChangeDeckButton'
                 >
                     Back
                 </Button>
-            </Link>
-            <Button 
-                color="primary" 
-                onClick={toggle}
-            >
-                New Card
-            </Button>
-            <Collapse isOpen={isOpen} className="DeckPreviewCollapse">
-                <NewCardForm currentDeck={currentDeck} />
-            </Collapse>
+                </Link>
+                <Button 
+                    color="primary" 
+                    onClick={toggle}
+                >
+                    New Card
+                </Button>
+                <Collapse isOpen={isOpen} className="DeckPreviewCollapse">
+                    <NewCardForm currentDeck={currentDeck} />
+                </Collapse>
+            </div>
+
+            <div className="PreviewCards">
                 <Container>
                     <Row>
                         {(currentDeck.cards.map((card) => (
-                            <Col xs="12" sm="6" md="4" key={card.id}>
+                            <Col 
+                                xs="12" 
+                                sm="6" 
+                                md="4" 
+                                key={card.id}
+                            >
                                 <Flashcard card={card} key={card.id} />
                                 <Button 
                                     className='EditFlashcardButton'
@@ -60,8 +75,8 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                                     Edit
                                 </Button>
                                 <Button 
-                                    onClick={
-                                        () => handleDeleteCardClick(card.id, currentDeck.id)
+                                    onClick={() => 
+                                        handleDeleteCardClick(card.id, currentDeck.id)
                                     }
                                     className='DeleteFlashcardButton'
                                     color="danger"
@@ -72,6 +87,7 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                         )))}
                     </Row>
                 </Container>
+            </div>
         </div>
     );
 }

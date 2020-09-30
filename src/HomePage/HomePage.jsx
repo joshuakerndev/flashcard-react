@@ -7,13 +7,19 @@ import { Link } from "react-router-dom";
 class HomePage extends Component {
     render() {
         return(
-            <div className='HomePage'>
+            <div>
                 <FlashNavbar />
-                <h1 className='HomeHeader'>HOME</h1>
-                <Link to='/decklist'>
-                    <Button>Decks</Button>
-                </Link>
+                <div className='HomePage'>
+                    <div className="HomeHeader">
+                        <h1>Welcome to flash</h1>
+                        <p>The intuitive flashcard study assistant</p>
+                    </div>
+                    <Link to='/decklist'>
+                        <Button>Decks</Button>
+                    </Link>
+                </div>
             </div>
+            
         );
     }
 }

@@ -57,7 +57,7 @@ const NewDeckForm = ({ addDeck }) => {
 
     return (
         <Form className="NewDeckForm">
-            <FormGroup>
+            <FormGroup className="NewDeckFormGroup">
                 <Label for="name">Name</Label>
                 <Input 
                     type="text"

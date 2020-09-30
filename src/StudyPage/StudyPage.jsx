@@ -10,9 +10,7 @@ import { incrementCard } from '../redux/card/card.actions';
 import { decrementCard } from '../redux/card/card.actions';
 
 import { Button } from 'reactstrap';
-
 import Flashcard from '../Flashcard/Flashcard';
-
 import { Link } from "react-router-dom";
 
 
@@ -33,10 +31,13 @@ const StudyPage = ({
 
     return(
         <div className='StudyPage'>
+
             <FlashNavbar />
+
             <div className='StudyPageHeader'>
                 <h1>Study Time!</h1>
             </div>
+
             <div className='StudyPageCardContainer'>
                 <Button 
                     className='StudyPagePreviousButton'
@@ -52,19 +53,22 @@ const StudyPage = ({
                     Next card
                 </Button>
             </div>
-            <Button
-                className='ShuffleDeckButton'
-                onClick={() => handleShuffleClick()}
-            >
-                Shuffle
-            </Button>
-            <Link to='/decklist'>
-                <Button 
-                    className='DeckPreviewChangeDeckButton'
+
+            <div className="StudyButtonPanel">
+                <Button
+                    className='ShuffleDeckButton'
+                    onClick={() => handleShuffleClick()}
                 >
-                    Back
+                    Shuffle
                 </Button>
-            </Link>
+                <Link to='/decklist'>
+                    <Button 
+                        className='DeckPreviewChangeDeckButton'
+                    >
+                        Back
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 }

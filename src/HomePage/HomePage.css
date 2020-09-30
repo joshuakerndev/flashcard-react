@@ -1,10 +1,14 @@
 .HomePage {
-    background-image: url('../DeckPreview/FlashcardSVGbackground.svg');
-    height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .HomeHeader {
-    margin-top: 0;
-    padding-top: 5rem;
+    margin-top: 100px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

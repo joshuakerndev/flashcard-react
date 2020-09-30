@@ -113,15 +113,24 @@ const QuizPage = ({
     }
 
     return (
-        <div>
+        <div className="QuizPage">
+
             <FlashNavbar />
-            <h1>Quiz</h1>
-            <div className="ScoreContainer">
-                <p>Current Score: {score}</p>
+
+            <div className="QuizPageHeader">
+                <h1>Quiz</h1>
+                <div className="ScoreContainer">
+                    <p>Current Score: {score}</p>
+                </div>
             </div>
+
             <div className='QuizCardContainer'>
-                <Flashcard card={currentDeck.cards[currentCard]} isQuiz={true} />
+                <Flashcard 
+                    card={currentDeck.cards[currentCard]} 
+                    isQuiz={true} 
+                />
             </div>
+
             <div className="QuizAnswerContainer">
                 <Form>
                     <FormGroup check>
@@ -168,7 +177,10 @@ const QuizPage = ({
                             {answerKey[3]}
                         </Label>
                     </FormGroup>
-                    <Button onClick={(e) => handleQuizSubmit(e)}>
+                    <Button 
+                        className="SubmitAnswerButton"
+                        onClick={(e) => handleQuizSubmit(e)}
+                    >
                         Submit
                     </Button>
                 </Form>

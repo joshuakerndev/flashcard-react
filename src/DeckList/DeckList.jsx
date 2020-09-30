@@ -37,56 +37,76 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
 
     return (
         <div className='DeckList'>
+
             <FlashNavbar />
-            <h1>Your Flashcard Decks</h1>
+
+            <div className="DeckListHeader">
+                <h1>Your Flashcard Decks</h1>
                 <Button 
                     color="primary" 
                     onClick={toggle}
+                    className="NewDeckButton"
                 >
                     New Deck
                 </Button>
                 <Collapse isOpen={isOpen} className="DeckListCollapse">
                     <NewDeckForm />
                 </Collapse>
+            </div>
+
+            <div className="DeckListDecks">
                 <Container>
                     <Row>
                         {decks.map((deck) => (
-                            <Col xs="12" sm="6" md="4" key={deck.id}>
+                            <Col 
+                                className="DeckPreviewPanel" 
+                                xs="12" 
+                                sm="6" 
+                                md="4" 
+                                key={deck.id}
+                            >
                                 <Flashcard card={deck.cards[0]} />
                                 <h4>{deck.name}</h4>
                                 <p>Cards: {deck.cards.length}</p>
                                 <p>Description: {deck.description}</p>
-                                <Link to="/deckpreview">
+                                <div className="DeckButtonPanel">
+                                    <Link to="/deckpreview">
+                                        <Button
+                                            className="DeckButton"
+                                            onClick={() => setDeck(deck)}
+                                        >
+                                            Edit
+                                        </Button>
+                                    </Link>
+                                    <Link to="/study">
+                                        <Button
+                                            className="DeckButton"
+                                            onClick={() => setDeck(deck)}
+                                        >
+                                            Study!
+                                        </Button>
+                                    </Link>
+                                    <Link to="/quiz">
+                                        <Button
+                                            className="DeckButton"
+                                            onClick={() => setDeck(deck)}
+                                        >
+                                            Quiz!
+                                        </Button>
+                                    </Link>
                                     <Button
-                                        onClick={() => setDeck(deck)}
-                                    >
-                                        Edit
-                                    </Button>
-                                </Link>
-                                <Link to="/study">
-                                    <Button
-                                        onClick={() => setDeck(deck)}
-                                    >
-                                        Study!
-                                    </Button>
-                                </Link>
-                                <Link to="/quiz">
-                                    <Button
-                                        onClick={() => setDeck(deck)}
-                                    >
-                                        Quiz!
-                                    </Button>
-                                </Link>
-                                <Button
+                                        className="DeckButton"
                                         color="danger"
                                         onClick={() => handleDeleteClick(deck.id)}
                                     >
                                         Delete
-                                </Button>
+                                    </Button>
+                                </div>
                             </Col>
                         ))}
                     </Row>
                 </Container>
+            </div>
         </div>
     );
 }
