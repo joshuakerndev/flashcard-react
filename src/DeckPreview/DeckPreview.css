@@ -18,3 +18,11 @@
     display: flex;
     justify-content: center;
 }
+
+.DeckPreviewBackButton {
+    margin-right: 1px;
+}
+
+.NewCardButton {
+    margin-left: 1px;
+}

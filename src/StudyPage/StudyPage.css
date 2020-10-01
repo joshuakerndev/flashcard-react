@@ -19,3 +19,11 @@
     width: 200px;
     height: 75px;
 }
+
+.DeckPreviewBackButton {
+    margin-left: 1px;
+}
+
+.ShuffleDeckButton {
+    margin-right: 1px;
+}

@@ -16,6 +16,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+.DeckButton {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
 .DeckListCollapse {
     display: flex;
     justify-content: center;

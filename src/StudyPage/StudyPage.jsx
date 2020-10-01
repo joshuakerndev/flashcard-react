@@ -63,7 +63,7 @@ const StudyPage = ({
                 </Button>
                 <Link to='/decklist'>
                     <Button 
-                        className='DeckPreviewChangeDeckButton'
+                        className='DeckPreviewBackButton'
                     >
                         Back
                     </Button>

@@ -44,12 +44,13 @@ const DeckPreview = ({ currentDeck, deleteCard }) => {
                 <h1>Preview / Edit</h1>
                 <Link to='/decklist'>
                 <Button 
-                    className='DeckPreviewChangeDeckButton'
+                    className='DeckPreviewBackButton'
                 >
                     Back
                 </Button>
                 </Link>
-                <Button 
+                <Button
+                    className="NewCardButton" 
                     color="primary" 
                     onClick={toggle}
                 >

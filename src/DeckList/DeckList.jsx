@@ -75,7 +75,7 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
                                             className="DeckButton"
                                             onClick={() => setDeck(deck)}
                                         >
-                                            Edit
+                                            View / Edit
                                         </Button>
                                     </Link>
                                     <Link to="/study">
