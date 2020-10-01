@@ -4,7 +4,7 @@ import FlashNavbar from '../FlashNavbar/FlashNavbar';
 import { Link } from 'react-router-dom';
 
 import NewCardForm from '../NewCardForm/NewCardForm';
-import EditCardForm from '../EditCardForm/EditCardForm';
+import CardPreview from '../CardPreview/CardPreview';
 
 import { deleteCard } from '../redux/card/card.actions';
 
@@ -17,17 +17,14 @@ import {
 } from 'reactstrap';
 
 import './DeckPreview.css';
-import Flashcard from '../Flashcard/Flashcard';
 
 
-const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
+const DeckPreview = ({ currentDeck, deleteCard }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
-    const [isEditOpen, setIsEditOpen] = useState(false);
-    const toggleEdit = () => setIsEditOpen(!isEditOpen);
-
+    //Function to be passed down to CardPreview component
     const handleDeleteCardClick = (cardId, deckId) => {
         if(currentDeck.cards.length <= 1){
             return alert("Cannot delete last card, please edit card or delete deck");
@@ -63,7 +60,7 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                 </Collapse>
             </div>
 
-            <div className="PreviewCards">
+            <div className="PreviewContainer">
                 <Container>
                     <Row>
                         {(currentDeck.cards.map((card) => (
@@ -71,33 +68,14 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                                 xs="12" 
                                 sm="6" 
                                 md="4" 
-                                className="PreviewCard"
+                                className="PreviewCol"
                                 key={card.id}
                             >
-                                <Flashcard card={card} key={card.id} />
-                                <div className="PreviewCardButtonPanel">
-                                    <Button 
-                                        className='EditFlashcardButton'
-                                        onClick={toggleEdit}
-                                    >
-                                        Edit
-                                    </Button>
-                                    <Button 
-                                        onClick={() => 
-                                            handleDeleteCardClick(card.id, currentDeck.id)
-                                        }
-                                        className='DeleteFlashcardButton'
-                                        color="danger"
-                                    >
-                                        Delete
-                                    </Button>
-                                </div>
-                                <Collapse isOpen={isEditOpen} className="EditCardCollapse">
-                                    <EditCardForm
-                                        currentDeck={currentDeck} 
-                                        cardId={card.id}
-                                    />
-                                </Collapse>
+                                <CardPreview 
+                                    card={card} 
+                                    currentDeck={currentDeck}
+                                    handleDeleteCardClick={handleDeleteCardClick} 
+                                />   
                             </Col>
                         )))}
                     </Row>

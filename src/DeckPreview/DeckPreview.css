@@ -7,20 +7,10 @@
     margin-bottom: 50px;
 }
 
-.PreviewCard {
+.PreviewCol {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.EditFlashcardButton {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.DeleteFlashcardButton {
-    margin-bottom: 10px;
-    margin-top: 10px;
 }
 
 .DeckPreviewCollapse {
