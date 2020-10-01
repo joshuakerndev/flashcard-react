@@ -71,24 +71,27 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                                 xs="12" 
                                 sm="6" 
                                 md="4" 
+                                className="PreviewCard"
                                 key={card.id}
                             >
                                 <Flashcard card={card} key={card.id} />
-                                <Button 
-                                    className='EditFlashcardButton'
-                                    onClick={toggleEdit}
-                                >
-                                    Edit
-                                </Button>
-                                <Button 
-                                    onClick={() => 
-                                        handleDeleteCardClick(card.id, currentDeck.id)
-                                    }
-                                    className='DeleteFlashcardButton'
-                                    color="danger"
-                                >
-                                    Delete
-                                </Button>
+                                <div className="PreviewCardButtonPanel">
+                                    <Button 
+                                        className='EditFlashcardButton'
+                                        onClick={toggleEdit}
+                                    >
+                                        Edit
+                                    </Button>
+                                    <Button 
+                                        onClick={() => 
+                                            handleDeleteCardClick(card.id, currentDeck.id)
+                                        }
+                                        className='DeleteFlashcardButton'
+                                        color="danger"
+                                    >
+                                        Delete
+                                    </Button>
+                                </div>
                                 <Collapse isOpen={isEditOpen} className="EditCardCollapse">
                                     <EditCardForm
                                         currentDeck={currentDeck} 
