@@ -4,6 +4,7 @@ import FlashNavbar from '../FlashNavbar/FlashNavbar';
 import { Link } from 'react-router-dom';
 
 import NewCardForm from '../NewCardForm/NewCardForm';
+import EditCardForm from '../EditCardForm/EditCardForm';
 
 import { deleteCard } from '../redux/card/card.actions';
 
@@ -22,8 +23,10 @@ import Flashcard from '../Flashcard/Flashcard';
 const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
 
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
+
+    const [isEditOpen, setIsEditOpen] = useState(false);
+    const toggleEdit = () => setIsEditOpen(!isEditOpen);
 
     const handleDeleteCardClick = (cardId, deckId) => {
         if(currentDeck.cards.length <= 1){
@@ -73,6 +76,7 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                                 <Flashcard card={card} key={card.id} />
                                 <Button 
                                     className='EditFlashcardButton'
+                                    onClick={toggleEdit}
                                 >
                                     Edit
                                 </Button>
@@ -85,6 +89,12 @@ const DeckPreview = ({ decks, currentDeck, deleteCard }) => {
                                 >
                                     Delete
                                 </Button>
+                                <Collapse isOpen={isEditOpen} className="EditCardCollapse">
+                                    <EditCardForm
+                                        currentDeck={currentDeck} 
+                                        cardId={card.id}
+                                    />
+                                </Collapse>
                             </Col>
                         )))}
                     </Row>

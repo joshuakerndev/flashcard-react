@@ -77,6 +77,36 @@ export const addCard = (newCard, deckId) => async dispatch => {
     }
 };
 
+export const editCard = (newCard, cardId, deckId) => async dispatch => {
+    try {
+        let savedDecks = JSON.parse(localStorage.getItem("decks"));
+        let updatedDeck;
+        let newCurrentDeck;
+        for(let i=0; i<savedDecks.length; i++){
+            if(savedDecks[i].id === deckId){
+                savedDecks[i].cards.push(newCard);
+                updatedDeck = (savedDecks[i].cards.filter(card => card.id !== cardId));
+                savedDecks[i].cards = updatedDeck;
+                newCurrentDeck = savedDecks[i];
+                console.log(savedDecks)
+            }
+        }
+        localStorage.setItem("decks", JSON.stringify(savedDecks));
+        const result = JSON.parse(localStorage.getItem("decks"));
+        dispatch({
+            type: 'SET_DECKS',
+            payload: result
+        });
+        dispatch({
+            type: 'SET_DECK',
+            payload: newCurrentDeck
+        });
+
+    } catch(err){
+        console.log(err);
+    }
+};
+
 export const deleteCard = (cardId, deckId) => async dispatch => {
     try{
         let savedDecks = JSON.parse(localStorage.getItem("decks"));
