@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import FlashNavbar from '../FlashNavbar/FlashNavbar';
 
@@ -27,7 +27,20 @@ const QuizPage = ({
 
     const nextCard = incrementCardHelper(currentDeck, currentCard);
 
-    //Reset deck to card 0 for quiz
+    const savedHiScore = JSON.parse(localStorage.getItem("flashHiScore"));
+
+    //Get high score
+    useEffect(() => {
+        if(!savedHiScore){
+            setHiScore(0);
+            localStorage.setItem("flashHiScore", JSON.stringify(0));
+        } else {
+            setHiScore(savedHiScore);
+        }
+    }, [savedHiScore]);
+
+    //State for high score
+    const [hiScore, setHiScore] = useState(0);
 
     // State for score
     const [score, setScore] = useState(0);
@@ -103,8 +116,37 @@ const QuizPage = ({
             alert("INCORRECT");
             shuffleAnswers(initialAnswerKey);
             setAnswerKey(initialAnswerKey);
+            setIncorrectGuesses( incorrectGuesses + 1 );
         }
     }
+
+    //State for incorrect guesses
+    const [incorrectGuesses, setIncorrectGuesses] = useState(0);
+
+    // Logic for lose condition
+    if(incorrectGuesses >= 3){
+        const resetGame = async () => {
+            try {
+                await resetDeck();
+                const oldHiScore = await(JSON.parse(localStorage.getItem("flashHiScore")));
+                if(score > oldHiScore){
+                    localStorage.setItem("flashHiScore", JSON.stringify(score));
+                }
+            } catch(error) {
+                console.log(error);
+            }
+            try {
+                setIncorrectGuesses(0);
+                setScore(0);
+                setCorrectAnswer(currentDeck.cards[currentCard].Chinese);
+                setAnswerKey(initialAnswerKey);
+            } catch(error) {
+                console.log(error);
+            }
+        }
+        resetGame();
+        alert('GAME OVER! Please try again!');
+    }        
 
     return (
         <div className="QuizPage">
@@ -114,7 +156,9 @@ const QuizPage = ({
             <div className="QuizPageHeader">
                 <h1>Quiz</h1>
                 <div className="ScoreContainer">
+                    <p>High Score: {hiScore}</p>
                     <p>Current Score: {score}</p>
+                    <h4>Incorrect Guesses: {incorrectGuesses} / 3</h4>
                 </div>
             </div>
 
@@ -189,7 +233,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    incrementCard: newCard => dispatch(incrementCard(newCard))
+    incrementCard: newCard => dispatch(incrementCard(newCard)),
+    resetDeck: dispatch(resetDeck)
 });
 
 export default connect(
