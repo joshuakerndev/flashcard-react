@@ -1,39 +1,33 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import FlashNavbar from '../FlashNavbar/FlashNavbar';
-import { Link } from 'react-router-dom';
 
 import { 
     Button, 
-    Collapse, 
-    Container, 
-    Row, 
-    Col,
     Form,
     FormGroup,
     Label,
     Input,
-    FormText 
 } from 'reactstrap';
 
 import './QuizPage.css';
 import Flashcard from '../Flashcard/Flashcard';
 
 import incrementCardHelper from '../helpers/increment-cards-helper';
-import decrementCardHelper from '../helpers/decrement-cards-helper';
-import shuffleDeckHelper from '../helpers/shuffle-deck-helper';
+
+import { resetDeck } from '../redux/card/card.actions';
 import { incrementCard } from '../redux/card/card.actions';
-import { decrementCard } from '../redux/card/card.actions';
 
 const QuizPage = ({ 
                     currentDeck, 
                     currentCard,
                     incrementCard,
-                    decrementCard 
+                    resetDeck 
                 }) => {
 
     const nextCard = incrementCardHelper(currentDeck, currentCard);
-    const prevCard = decrementCardHelper(currentDeck, currentCard);
+
+    //Reset deck to card 0 for quiz
 
     // State for score
     const [score, setScore] = useState(0);
@@ -195,8 +189,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    incrementCard: newCard => dispatch(incrementCard(newCard)),
-    decrementCard: newCard => dispatch(decrementCard(newCard))
+    incrementCard: newCard => dispatch(incrementCard(newCard))
 });
 
 export default connect(
@@ -204,6 +197,6 @@ export default connect(
     { 
         mapDispatchToProps,
         incrementCard,
-        decrementCard
+        resetDeck
     }
 )(QuizPage);

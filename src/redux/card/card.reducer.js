@@ -1,9 +1,6 @@
-import FLASHCARD_DATA from '../../DeckPreview/FLASHCARD_DATA';
-
-
 
 const INITIAL_STATE = {
-    currentDeck: FLASHCARD_DATA,
+    currentDeck: {},
     currentCard: 0,
     decks: []
 }
@@ -39,7 +36,8 @@ const cardReducer = (state = INITIAL_STATE, action) => {
         case 'NEW_DECK':
             return {
                 ...state,
-                decks: [action.payload, ...state.decks]
+                decks: [action.payload, ...state.decks],
+                currentDeck: action.payload
             };
         default:
             return state;

@@ -5,9 +5,16 @@ import HomePage from './HomePage/HomePage';
 import StudyPage from './StudyPage/StudyPage';
 import DeckList from './DeckList/DeckList';
 import QuizPage from './QuizPage/QuizPage';
+import VerifyRoute from './VerifyRoute/VerifyRoute';
+import VerifyQuizRoute from './VerifyRoute/VerifyQuizRoute';
 
 import { connect } from 'react-redux';
-import { setDecks, addCard } from './redux/card/card.actions';
+
+import { 
+  setDecks, 
+  addCard, 
+  setDeck 
+} from './redux/card/card.actions';
 
 import FLASHCARD_DATA from './DeckPreview/FLASHCARD_DATA';
 import FLASHCARD_DATA_2 from './DeckPreview/FLASHCARD_DATA_2';
@@ -16,7 +23,7 @@ import FLASHCARD_DATA_3 from './DeckPreview/FLASHCARD_DATA_3';
 
 import { Switch, Route } from 'react-router-dom';
 
-function App({ setDecks, addCard }) {
+function App({ setDecks, setDeck, addCard }) {
 
   const initialDecks = [FLASHCARD_DATA, FLASHCARD_DATA_2, FLASHCARD_DATA_3];
   
@@ -26,16 +33,18 @@ function App({ setDecks, addCard }) {
         const savedDecks = JSON.parse(window.localStorage.getItem("decks"));
         if(!savedDecks){
           setDecks(initialDecks);
+          setDeck(initialDecks[0]);
           localStorage.setItem("decks", JSON.stringify(initialDecks));
         } else {
           setDecks(savedDecks);
+          setDeck(savedDecks[0]);
         }
       } catch(err) {
         console.log(err.message);
       }
     }
     getSavedDecks();
-  }, [initialDecks, setDecks, addCard]);
+  }, [initialDecks, setDecks, setDeck, addCard]);
 
 
   return (
@@ -63,12 +72,13 @@ function App({ setDecks, addCard }) {
             />
           }
         />
-        <Route
+        <VerifyRoute
           path='/study'
           exact
           component={StudyPage}
+          cardMin={0}
         />
-        <Route
+        <VerifyQuizRoute
           path='/quiz'
           exact
           component={QuizPage}
@@ -80,5 +90,9 @@ function App({ setDecks, addCard }) {
 
 export default connect(
   null, 
-  { setDecks, addCard }
+  { 
+    setDecks, 
+    setDeck, 
+    addCard 
+  }
 )(App);

@@ -45,6 +45,10 @@ export const deleteDeck = (id) => async dispatch => {
             type: "SET_DECKS",
             payload: updatedList
         });
+        dispatch({
+            type: "SET_DECK",
+            payload: (updatedList[0] ? updatedList[0] : {})
+        })
     } catch(err) {
         console.log(err);
     }

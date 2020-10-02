@@ -31,9 +31,7 @@ const StudyPage = ({
 
     return(
         <div className='StudyPage'>
-
             <FlashNavbar />
-
             <div className='StudyPageHeader'>
                 <h1>Study Time!</h1>
             </div>
