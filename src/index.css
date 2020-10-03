@@ -7,8 +7,12 @@ body {
 }
 
 div#root {
-  min-height: 100vh;
-  background-image: url('./DeckPreview/FlashcardSVGbackground.svg');
+  min-height: 100%;
+  background: url('./DeckPreview/FlashcardSVGbackground.svg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .App {
