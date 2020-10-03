@@ -15,6 +15,7 @@
 #isRotated {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
 }
 
@@ -28,16 +29,21 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-
+    -webkit-perspective: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    visibility: visible;
+    backface-visibility: hidden;    
 }
 
 .Card-Back {
     position: absolute;
-    -webkit-perspective: 900000px;
-    perspective: 900000px;
     width: 100%;
     height: 100%;
+    -webkit-perspective: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    visibility: visible;
     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
