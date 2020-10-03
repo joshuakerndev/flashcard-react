@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Flashcard.css';
 
+
 const Flashcard = ({ card, isQuiz }) => {
+
+    const [isRotated, setIsRotated] = useState(false);
+
+    const handleClick = () => setIsRotated(!isRotated);
+
     return(
-        <div className='Flashcard'>
+        <div 
+            className='Flashcard' 
+            style={isRotated ? {transform: "rotateY(180deg)"} : null}
+            onClick={handleClick}
+        >
             <div className='Card-Front'>
                 <p className='Flashcard-Text'>{card.English}</p>
             </div>

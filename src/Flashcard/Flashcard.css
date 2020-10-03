@@ -10,13 +10,14 @@
     -webkit-transition: transform 0.5s ease;
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: all 0.5s ease;
+    /* transform: rotateY(180deg); */
 }
 
-.Flashcard:active {
+/* .Flashcard:active {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
-}
+} */
 
 .Flashcard-Text {
     color: #D2FDFF;
