@@ -1,3 +1,7 @@
+.FlashcardContainer {
+    position: fixed;
+}
+
 .Flashcard {
     width: 220px;
     height: 300px;
