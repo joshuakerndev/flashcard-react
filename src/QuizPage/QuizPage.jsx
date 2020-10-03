@@ -26,7 +26,6 @@ const QuizPage = ({
                 }) => {
 
     const nextCard = incrementCardHelper(currentDeck, currentCard);
-
     const savedHiScore = JSON.parse(localStorage.getItem("flashHiScore"));
 
     //Get high score
@@ -103,6 +102,8 @@ const QuizPage = ({
 
     // State for correct answer
     const [correctAnswer, setCorrectAnswer] = useState(currentDeck.cards[currentCard].Chinese);
+
+    //Logic for correct / incorrect answer submission
 
     const handleQuizSubmit = (e) => {
         if(answerKey[selectedOption] === correctAnswer){
