@@ -8,13 +8,12 @@
     align-items: center;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    -webkit-transition: transform 0.5s ease;
-    -webkit-transition: -webkit-transform 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
 #isRotated {
-    transform: rotateY(180deg);
+     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
@@ -28,23 +27,20 @@
 
 .Card-Front {
     position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    -webkit-perspective: 0;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0);
-    visibility: visible;
-    backface-visibility: hidden;    
 }
 
 .Card-Back {
     position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    -webkit-perspective: 0;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0);
-    visibility: visible;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
