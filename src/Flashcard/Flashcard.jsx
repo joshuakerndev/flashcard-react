@@ -11,7 +11,7 @@ const Flashcard = ({ card, isQuiz }) => {
     return(
         <div 
             className='Flashcard' 
-            style={isRotated ? {transform: "rotateY(180deg)"} : null}
+            id={isRotated ? "isRotated" : null}
             onClick={handleClick}
         >
             <div className='Card-Front'>
