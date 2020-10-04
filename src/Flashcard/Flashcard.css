@@ -51,6 +51,7 @@
 
 .flipCard {
     -webkit-perspective: 800;
+    perspective: 800;
     -ms-perspective: 800;
     -moz-perspective: 800;
     -o-perspective: 800;
