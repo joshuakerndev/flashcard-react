@@ -1,4 +1,4 @@
-.Flashcard {
+/* .Flashcard {
     width: 220px;
     height: 300px;
     background-color: #303C6C;
@@ -31,16 +31,14 @@
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
-}
+} */
 
 .Flashcard-Text {
     color: #D2FDFF;
     font-size: 30px;
-    padding-top: 75px;
-    z-index: 20;
 }
 
-.Card-Front {
+/* .Card-Front {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -63,4 +61,24 @@
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
+} */
+
+.Card-Front {
+    width: 220px;
+    height: 300px;
+    background-color: #303C6C;
+    border: 25px solid #B4DFE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Card-Back {
+    width: 220px;
+    height: 300px;
+    background-color: #303C6C;
+    border: 25px solid #B4DFE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
