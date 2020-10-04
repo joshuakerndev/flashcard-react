@@ -27,6 +27,7 @@
     color: #D2FDFF;
     font-size: 30px;
     padding-top: 75px;
+    z-index: 20;
 }
 
 .Card-Front {
