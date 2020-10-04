@@ -1,3 +1,8 @@
+.Flashcard-Text {
+    color: #D2FDFF;
+    font-size: 30px;
+}
+
 .Card-Front {
     width: 220px;
     height: 300px;
