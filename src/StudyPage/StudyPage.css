@@ -1,10 +1,14 @@
 .StudyPage {
     text-align: center;
+    height: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 76, 76, 0.85);
 }
 
 .StudyPageHeader {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgba(250, 152, 125);
 }
 
 .StudyPageCardContainer {
@@ -13,17 +17,38 @@
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    background-color: rgba(16, 162, 150, 0.70);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.85);
+    border-top: 5px solid rgba(0, 0, 0, 0.85);
 }
 
-.StudyPageCardContainer button {
-    width: 200px;
+.StudyButtonPanel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.StudyPagePreviousButton {
+    margin: 20px;
     height: 75px;
+    width: 25%;
+}
+
+.StudyPageNextButton {
+    margin: 20px;
+    height: 75px;
+    width: 25%;
+}
+
+.StudyButtonPanel2 {
+    margin-top: 25px;
 }
 
 .DeckPreviewBackButton {
-    margin-left: 1px;
+    margin-left: 10px;
+    width: 25%;
 }
 
 .ShuffleDeckButton {
-    margin-right: 1px;
+    margin-right: 10px;
+    width: 25%;
 }

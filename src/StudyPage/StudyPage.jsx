@@ -9,7 +9,7 @@ import shuffleDeckHelper from '../helpers/shuffle-deck-helper';
 import { incrementCard } from '../redux/card/card.actions';
 import { decrementCard } from '../redux/card/card.actions';
 
-import { Button } from 'reactstrap';
+import { Button, Row } from 'reactstrap';
 import Flashcard from '../Flashcard/Flashcard';
 import { Link } from "react-router-dom";
 
@@ -38,22 +38,12 @@ const StudyPage = ({
             </div>
 
             <div className='StudyPageCardContainer'>
-                <Button 
-                    className='StudyPagePreviousButton'
-                    onClick={() => decrementCard(prevCard)}
-                >
-                    Previous Card
-                </Button>
+                
                 <Flashcard card={currentDeck.cards[currentCard]} />
-                <Button 
-                    className='StudyPageNextButton'
-                    onClick={() => incrementCard(nextCard)}
-                >
-                    Next card
-                </Button>
+                
             </div>
 
-            <div className="StudyButtonPanel">
+            <div className="StudyButtonPanel2">
                 <Button
                     className='ShuffleDeckButton'
                     onClick={() => handleShuffleClick()}
@@ -67,6 +57,20 @@ const StudyPage = ({
                         Back
                     </Button>
                 </Link>
+            </div>
+            <div className="StudyButtonPanel">
+                <Button 
+                    className='StudyPagePreviousButton'
+                    onClick={() => decrementCard(prevCard)}
+                >
+                    Previous Card
+                </Button>
+                <Button 
+                    className='StudyPageNextButton'
+                    onClick={() => incrementCard(nextCard)}
+                >
+                    Next card
+                </Button>
             </div>
         </div>
     );
