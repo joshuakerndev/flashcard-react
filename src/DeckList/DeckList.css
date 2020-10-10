@@ -4,8 +4,9 @@
 }
 
 .DeckListHeader {
-    margin-top: 50px;
+    padding-top: 25px;
     margin-bottom: 25px;
+    background-color: rgba(240, 96, 96, 0.55);
 }
 
 h1 {

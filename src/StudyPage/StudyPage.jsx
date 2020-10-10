@@ -34,6 +34,7 @@ const StudyPage = ({
             <FlashNavbar />
             <div className='StudyPageHeader'>
                 <h1>Study Time!</h1>
+                <h2>{currentDeck.name}</h2>
             </div>
 
             <div className='StudyPageCardContainer'>

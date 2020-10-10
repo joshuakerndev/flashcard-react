@@ -10,13 +10,15 @@ import {
   NavbarText
 } from 'reactstrap';
 
+import "./FlashNavbar.css";
+
 const FlashNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="FlashNavbar">
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">flash</NavbarBrand>
         <NavbarToggler onClick={toggle} />

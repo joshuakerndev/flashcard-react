@@ -16,9 +16,9 @@ import {
   setDeck 
 } from './redux/card/card.actions';
 
-import FLASHCARD_DATA from './DeckPreview/FLASHCARD_DATA';
-import FLASHCARD_DATA_2 from './DeckPreview/FLASHCARD_DATA_2';
-import FLASHCARD_DATA_3 from './DeckPreview/FLASHCARD_DATA_3';
+import FLASHCARD_DATA from './seedData/FLASHCARD_DATA';
+import FLASHCARD_DATA_2 from './seedData/FLASHCARD_DATA_2';
+import FLASHCARD_DATA_3 from './seedData/FLASHCARD_DATA_3';
 
 
 import { Switch, Route } from 'react-router-dom';

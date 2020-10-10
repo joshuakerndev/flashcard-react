@@ -156,6 +156,7 @@ const QuizPage = ({
 
             <div className="QuizPageHeader">
                 <h1>Quiz</h1>
+                <h2>Test your memory of {currentDeck.name}</h2>
                 <div className="ScoreContainer">
                     <p>High Score: {hiScore}</p>
                     <p>Current Score: {score}</p>
