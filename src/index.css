@@ -8,7 +8,8 @@ body {
 
 div#root {
   min-height: 100vh;
-  background: url('./DeckPreview/FlashcardSVGbackground.svg') no-repeat center center fixed;
+  /* background: url('./DeckPreview/FlashcardSVGbackground.svg') no-repeat center center fixed; */
+  background-color: rgba(0, 0, 0, 0.85);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

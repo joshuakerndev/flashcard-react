@@ -3,8 +3,15 @@
 }
 
 .DeckPreviewHeader {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(250, 152, 125);
+}
+
+.PreviewContainer {
+    margin-top: 5px;
+    padding-top: 15px;
+    background-color: rgba(114, 204, 167, 0.8);
 }
 
 .PreviewCol {
@@ -21,8 +28,10 @@
 
 .DeckPreviewBackButton {
     margin-right: 1px;
+    margin-bottom: 20px;
 }
 
 .NewCardButton {
     margin-left: 1px;
+    margin-bottom: 20px;
 }

@@ -1,25 +1,49 @@
 .DeckList {
     text-align: center;
     height: 100%;
+    min-height: 100vh;
+    background-color: rgba(240, 96, 96);
 }
 
 .DeckListHeader {
     padding-top: 25px;
-    margin-bottom: 25px;
-    background-color: rgba(240, 96, 96, 0.55);
+    padding-bottom: 25px;
+    background-color: rgba(250, 152, 125);
 }
 
 h1 {
     margin-bottom: 25px;
 }
 
+.DeckListDecks {
+    background-color: rgba(16, 162, 150, 0.85);
+    padding-top: 15px;
+    border-top: 5px solid rgba(0, 0, 0, 0.85);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.85);
+}
+
 .NewDeckButton {
     margin-bottom: 20px;
+}
+
+.DeckButtonPanel {
+    justify-content: center;
+}
+
+.DeckTextPanel {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .DeckButton {
     margin-left: 1px;
     margin-right: 1px;
+    margin-bottom: 2px;
 }
 
 .DeckListCollapse {
@@ -31,6 +55,7 @@ h1 {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 25px;
 }
 
 .DeckSpread {

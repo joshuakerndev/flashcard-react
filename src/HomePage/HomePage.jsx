@@ -45,7 +45,7 @@ const HomePage = () => {
                                 id="HomeF"
                                 onMouseEnter={handleFirstFlip}
                             >
-                                F
+                                f
                             </div>
                             <div
                                 className="HomeCardBack"
@@ -66,7 +66,7 @@ const HomePage = () => {
                                 id="HomeL"
                                 onMouseEnter={handleSecondFlip}
                             >
-                                L
+                                l
                             </div>
                             <div
                                 className="HomeCardBack"
@@ -87,7 +87,7 @@ const HomePage = () => {
                                 id="HomeA"
                                 onMouseEnter={handleThirdFlip}
                             >
-                                A
+                                a
                             </div>
                             <div
                                 className="HomeCardBack"
@@ -108,7 +108,7 @@ const HomePage = () => {
                                 id="HomeS"
                                 onMouseEnter={handleFourthFlip}
                             >
-                                S
+                                s
                             </div>
                             <div
                                 className="HomeCardBack"
@@ -129,7 +129,7 @@ const HomePage = () => {
                                 id="HomeH"
                                 onMouseEnter={handleFifthFlip}
                             >
-                                H
+                                h
                             </div>
                             <div
                                 className="HomeCardBack"

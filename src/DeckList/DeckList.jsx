@@ -66,10 +66,12 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
                                 key={deck.id}
                             >
                                 <Flashcard card={deck.cards[0]} />
-                                <h4>{deck.name}</h4>
-                                <p>Cards: {deck.cards.length}</p>
-                                <p>Description: {deck.description}</p>
-                                <div className="DeckButtonPanel">
+                                <div className="DeckTextPanel">
+                                    <h4>{deck.name}</h4>
+                                    <p>Cards: {deck.cards.length}</p>
+                                    <p>Description: {deck.description}</p>
+                                </div>
+                                <Row className="DeckButtonPanel">
                                     <Link to="/deckpreview">
                                         <Button
                                             className="DeckButton"
@@ -101,7 +103,7 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
                                     >
                                         Delete
                                     </Button>
-                                </div>
+                                </Row>
                             </Col>
                         ))}
                     </Row>
