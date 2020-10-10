@@ -6,52 +6,52 @@ const FLASHCARD_DATA_3 = {
         [
             {
                 English: 'Banana',
-                Chinese: "xiang jiao",
+                Chinese: "香蕉 xiāng jiāo",
                 id: 21
             },
             {
                 English: 'Grape',
-                Chinese: "pu tao",
+                Chinese: "葡萄 pú táo",
                 id: 22
             },
             {
                 English: 'Leechee',
-                Chinese: "li zhi",
+                Chinese: "荔枝 lì zhī",
                 id: 23
             },
             {
                 English: 'Watermelon',
-                Chinese: "xi gua",
+                Chinese: "西瓜 xī guā",
                 id: 24
             },
             {
                 English: 'Mango',
-                Chinese: "man guo",
+                Chinese: "芒果 máng guǒ",
                 id: 25
             },
             {
                 English: 'Papaya',
-                Chinese: "mu gua",
+                Chinese: "木瓜 mù guā",
                 id: 26
             },
             {
                 English: 'Broccoli',
-                Chinese: "hua ye cai",
+                Chinese: "花椰菜 huā yē cài",
                 id: 27
             },
             {
                 English: 'Green Onion',
-                Chinese: "cong",
+                Chinese: "蔥 cōng",
                 id: 28
             },
             {
                 English: 'Garlic',
-                Chinese: "shuan tou",
+                Chinese: "大蒜 dà suàn",
                 id: 29
             },
             {
                 English: 'Carrot',
-                Chinese: "hong luo buo",
+                Chinese: "紅蘿蔔 hóng luó bo",
                 id: 30
             }
         ]

@@ -6,52 +6,52 @@ const FLASHCARD_DATA = {
         [
             {
                 English: 'Blue',
-                Chinese: "lan se",
+                Chinese: "藍色 lán sè",
                 id: 1
             },
             {
                 English: 'Red',
-                Chinese: "hong se",
+                Chinese: "紅色 hóng sè",
                 id: 2
             },
             {
                 English: 'Hot',
-                Chinese: "re",
+                Chinese: "熱 rè",
                 id: 3
             },
             {
                 English: 'Cold',
-                Chinese: "leng",
+                Chinese: "冷 lěng",
                 id: 4
             },
             {
                 English: 'Job',
-                Chinese: "gong ze",
+                Chinese: "工作 gōng zuò",
                 id: 5
             },
             {
                 English: 'Fun',
-                Chinese: "hao wan",
+                Chinese: "好玩 hǎo wán",
                 id: 6
             },
             {
                 English: 'Happy',
-                Chinese: "gao xin",
+                Chinese: "快樂 kuài lè",
                 id: 7
             },
             {
                 English: 'Old',
-                Chinese: "lao",
+                Chinese: "老 lǎo",
                 id: 8
             },
             {
                 English: 'Fast',
-                Chinese: "kuai",
+                Chinese: "快 kuài",
                 id: 9
             },
             {
                 English: 'Bus',
-                Chinese: "gong che",
+                Chinese: "公車 gōng chē",
                 id: 10
             }
         ]

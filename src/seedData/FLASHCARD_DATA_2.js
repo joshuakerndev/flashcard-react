@@ -6,52 +6,52 @@ const FLASHCARD_DATA_2 = {
         [
             {
                 English: 'Yellow',
-                Chinese: "huang se",
+                Chinese: "黃色 huáng sè",
                 id: 11
             },
             {
                 English: 'Car',
-                Chinese: "che",
+                Chinese: "車 chē",
                 id: 12
             },
             {
                 English: 'Tea',
-                Chinese: "cha",
+                Chinese: "茶 chá",
                 id: 13
             },
             {
                 English: 'Ice Cream',
-                Chinese: "bing qi ling",
+                Chinese: "冰淇淋 bīng qí lín",
                 id: 14
             },
             {
                 English: 'House',
-                Chinese: "fang zi",
+                Chinese: "房子 fáng zi",
                 id: 15
             },
             {
                 English: 'Bread',
-                Chinese: "mian bao",
+                Chinese: "麵包 miàn bāo",
                 id: 16
             },
             {
                 English: 'Fish',
-                Chinese: "yu",
+                Chinese: "魚 yú",
                 id: 17
             },
             {
                 English: 'Movie',
-                Chinese: "dian ying",
+                Chinese: "電影 diàn yǐng",
                 id: 18
             },
             {
                 English: 'Slow',
-                Chinese: "mang",
+                Chinese: "慢 màng",
                 id: 19
             },
             {
                 English: 'Airplane',
-                Chinese: "fei ji",
+                Chinese: "飛機 fēi jī",
                 id: 20
             }
         ]
