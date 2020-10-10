@@ -11,6 +11,11 @@
     background-color: rgba(250, 152, 125);
 }
 
+.StudyPageHeader h1 {
+    margin-bottom: 25px;
+    letter-spacing: 4px;
+}
+
 .StudyPageCardContainer {
     height: 50vh;
     display: flex;

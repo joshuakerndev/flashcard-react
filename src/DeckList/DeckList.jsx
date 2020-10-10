@@ -41,7 +41,7 @@ const DeckList = ({ decks, setDeck, deleteDeck }) => {
             <FlashNavbar />
 
             <div className="DeckListHeader">
-                <h1>Your Flashcard Decks</h1>
+                <h1>YOUR FLASHCARD DECKS</h1>
                 <Button 
                     color="primary" 
                     onClick={toggle}

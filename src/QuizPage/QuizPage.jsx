@@ -155,8 +155,8 @@ const QuizPage = ({
             <FlashNavbar />
 
             <div className="QuizPageHeader">
-                <h1>Quiz</h1>
-                <h2>Test your memory of {currentDeck.name}</h2>
+                <h1>QUIZ</h1>
+                <h3>Test your memory of {currentDeck.name}</h3>
                 <div className="ScoreContainer">
                     <p>High Score: {hiScore}</p>
                     <p>Current Score: {score}</p>

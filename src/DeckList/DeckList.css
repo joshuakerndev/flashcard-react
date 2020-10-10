@@ -11,8 +11,9 @@
     background-color: rgba(250, 152, 125);
 }
 
-h1 {
+.DeckListHeader h1 {
     margin-bottom: 25px;
+    letter-spacing: 3px;
 }
 
 .DeckListDecks {

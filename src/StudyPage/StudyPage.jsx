@@ -33,7 +33,7 @@ const StudyPage = ({
         <div className='StudyPage'>
             <FlashNavbar />
             <div className='StudyPageHeader'>
-                <h1>Study Time!</h1>
+                <h1>STUDY TIME!</h1>
                 <h2>{currentDeck.name}</h2>
             </div>
 

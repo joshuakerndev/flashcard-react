@@ -41,7 +41,7 @@ const DeckPreview = ({ currentDeck, deleteCard }) => {
             <FlashNavbar />
 
             <div className="DeckPreviewHeader">
-                <h1>Preview / Edit</h1>
+                <h1>PREVIEW / EDIT</h1>
                 <Link to='/decklist'>
                 <Button 
                     className='DeckPreviewBackButton'
